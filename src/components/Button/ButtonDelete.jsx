@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-
+import css from 'components/Button/button.module.css'
 
 export const ButtonDelete = ({ type = 'button', children, actionHandler }) => {
   return (
-    <button type={type} onClick={actionHandler}>
+    <button type={type} onClick={actionHandler} className={css.buttonDelete}>
       {children}
     </button>
   );

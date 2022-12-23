@@ -3,7 +3,7 @@ import { ContactForm } from 'components/InputForm/ContactForm';
 import { Section } from 'components/Section/Section';
 import { ContactsList } from 'components/ContactsList/ContactsList';
 import { Filter } from 'components/Filter/Filter';
-
+import css from 'components/app.module.css'
 export class App extends React.Component {
   state = {
     contacts: [],
@@ -40,7 +40,7 @@ export class App extends React.Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <>
+      <div className={css.div}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
 
@@ -51,7 +51,7 @@ export class App extends React.Component {
             onDeleteButton={this.deleteContact}
           ></ContactsList>
         </Section>
-      </>
+      </div>
     );
   }
 }

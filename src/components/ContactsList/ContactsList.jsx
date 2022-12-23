@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 import { ButtonDelete } from 'components/Button/ButtonDelete';
-
+import css from 'components/ContactsList/contactList.module.css'
 export const ContactsList = ({ contacts, onDeleteButton }) => {
   return (
-    <>
+    <div className={css.contacts}>
       {contacts.map(({ id, name, number }) => {
         return (
-          <marker key={id}>
-            <>
+          <marker key={id} className={css.marker}>
+            <div className={css.contactItem}>
               {`${name}: ${number}`}
               <ButtonDelete actionHandler={() => onDeleteButton(id)}>
                 X
               </ButtonDelete>
-            </>
+            </div>
           </marker>
         );
       })}
-    </>
+    </div>
   );
 };
 
